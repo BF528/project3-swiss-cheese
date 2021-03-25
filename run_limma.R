@@ -61,7 +61,7 @@ visualization <- function(chemical, samples){ # chemical is the name of the trea
     geom_hline(yintercept = 0, linetype = "dotted", colour= 'red') +
     scale_color_continuous(low='skyblue', high='midnightblue') +
     labs(x=paste0("Nominal P-values"),
-         y=paste0("Log2 Fold Change dfname ")) +
+         y=glue("Log2 Fold Change (Control vs. {chemical})")) +
     theme(legend.position="none") 
   plot+theme(legend.position = "right") 
   #ggplotly(plot) %>% layout(showlegend=T)
@@ -76,7 +76,7 @@ visualization <- function(chemical, samples){ # chemical is the name of the trea
     geom_vline(aes(xintercept = 0),
                color="blue", linetype="dashed", size=1) +
     geom_density(alpha=.2, fill="#FF6666") +
-    labs(x=paste0("Log2 Fold Change (dataname)"),
+    labs(x=glue("Log2 Fold Change (Control vs. {chemical})"),
          y=paste0("Frequency")) +
     theme(
       plot.title = element_text(size=20)
