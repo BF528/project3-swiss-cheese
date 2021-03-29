@@ -155,3 +155,11 @@ if __name__ == '__main__':
     sns.barplot(x='Treatment', y='Concordance', data=df, hue='Expression Level', ax=ax)
     ax.yaxis.set_major_formatter(mtick.PercentFormatter())
     plt.savefig('6b.png', dpi=100)
+    
+    # get top 10 expression genes from limma results
+    affy_genes = df_limma.iloc[:, 0].tolist()
+    affy_genes = list(set([affy_to_gene[x] for x in affy_genes if x in affy_to_gene]))
+    outfile = open(f'top10_{chemical}_limma.txt','w')
+    for gene in affy_genes[:10]:
+        outfile.write(gene+'\n')
+    outfile.close()
