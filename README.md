@@ -12,3 +12,10 @@ Analyst: [Yichi Zhang](https://github.com/MogicianEik)<br />
 Biologist: [Varun Raghuraman](https://github.com/vrvarun)<br />
 
 # Repository Contents
+
+1. RNA-Seq Sample Statistics and Alignment.<br />
+2. Read counting with featureCounts.<br />
+3. RNA-Seq Differential Expression with DESeq2.<br />
+4. Microarray Differential Expressoin with Limma.<br />
+5. Concordance between microarray and RNA-Seq DE genes. <br />
+6. A report in details.
