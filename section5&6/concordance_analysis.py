@@ -152,8 +152,14 @@ if __name__ == '__main__':
 
     df = pd.DataFrame(data, columns = ['Treatment', 'Expression Level', 'Concordance']) 
     fig, ax = plt.subplots(figsize=(25, 16))
-    sns.barplot(x='Treatment', y='Concordance', data=df, hue='Expression Level', ax=ax)
+    splot = sns.barplot(x='Treatment', y='Concordance', data=df, hue='Expression Level', ax=ax)
     ax.yaxis.set_major_formatter(mtick.PercentFormatter())
+    for p in splot.patches:
+        splot.annotate(format(p.get_height(), '.1f'), 
+                       (p.get_x() + p.get_width() / 2., p.get_height()), 
+                       ha = 'center', va = 'center', 
+                       xytext = (0, 9), 
+                       textcoords = 'offset points')
     plt.savefig('6b.png', dpi=100)
     
     # get top 10 expression genes from limma results
