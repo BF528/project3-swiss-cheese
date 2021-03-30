@@ -32,9 +32,9 @@ def concordance(refseq_genes, affy_genes, x=0):
     x: background-corrected intersection. In two independent sets, it is 0
     output: a float 
     '''
-    return 2*intersect(refseq_genes, affy_genes)/(len(refseq_genes)+len(affy_genes))
+    return 2*intersect(refseq_genes, affy_genes, x)/(len(refseq_genes)+len(affy_genes))
 
-def intersect(refseq_genes, affy_genes, x=0):
+def intersect(refseq_genes, affy_genes, x):
     '''
     A helper function that calculates background-corrected intersection between 2 sets of DEgenes
     '''
