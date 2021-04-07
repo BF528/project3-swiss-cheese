@@ -119,8 +119,10 @@ rownames(Result) = c("Significant genes count", "1st", "2nd", "3rd", "4th", "5th
 write.csv(Result, "Toxgroup significant gene count and top 10 most significant genes.csv")
 
 
-#4.6 Histogram 
 
+library("ggplot2")
+
+#4.6 Histogram
 ggplot(ahr_deseq_padj, aes(ahr_deseq_padj$log2FoldChange)) +
   geom_histogram(bins = 50, binwidth = 0.5, color="black") +
   xlab("log2 Fold Change") +
@@ -142,11 +144,8 @@ ggplot(Cytotoxic_deseq_padj, aes(Cytotoxic_deseq_padj$log2FoldChange)) +
   theme_classic() +
   theme(axis.title.x = element_text(size = 13, face="bold"),
         axis.title.y = element_text(size = 13, face="bold"))
-        
-        
-        
-        
-        
+
+
 #volcano Plots for AhR 
 
 
