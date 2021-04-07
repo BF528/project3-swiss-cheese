@@ -31,6 +31,9 @@ count_matrix = count_matrix[-c(1),]
 write.csv(count_matrix, "count_matrix.csv")
 
 
+
+#create box plot
+
 graphmatrix = count_matrix
 graphmatrix[graphmatrix==0] = 1
 boxplot(as.integer(paste(graphmatrix$SRR1177998)), 
@@ -45,28 +48,6 @@ boxplot(as.integer(paste(graphmatrix$SRR1177998)),
         main = "feature counts for SRR1177998", names = names(count_matrix)[-1], log = "y", xlab = "Samples", ylab = "Feature Counts")
 
 
-#4.6 Histogram
-ggplot(ahr_deseq_padj, aes(ahr_deseq_padj$log2FoldChange)) +
-        geom_histogram(bins = 50, binwidth = 0.5, color="black") +
-        xlab("log2 Fold Change") +
-        theme_classic() +
-        theme(axis.title.x = element_text(size = 13, face="bold"),
-              axis.title.y = element_text(size = 13, face="bold"))
-
-
-ggplot(carpxr_deseq_padj, aes(carpxr_deseq_padj$log2FoldChange)) +
-        geom_histogram(bins = 50, binwidth = 0.5, color="black") +
-        xlab("log2 Fold Change") +
-        theme_classic() +
-        theme(axis.title.x = element_text(size = 13, face="bold"),
-              axis.title.y = element_text(size = 13, face="bold"))
-
-ggplot(Cytotoxic_deseq_padj, aes(Cytotoxic_deseq_padj$log2FoldChange)) +
-        geom_histogram(bins = 50, binwidth = 0.5, color="black") +
-        xlab("log2 Fold Change") +
-        theme_classic() +
-        theme(axis.title.x = element_text(size = 13, face="bold"),
-              axis.title.y = element_text(size = 13, face="bold"))
 
 
 
