@@ -2,8 +2,6 @@
 
 library("dplyr")
 library("ggplot2")
-library("DESeq2")
-library("reshape2")
 
 
 
