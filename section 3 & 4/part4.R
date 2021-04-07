@@ -2,10 +2,6 @@
 #Programmer 
 library("DESeq2")
 
-BiocManager::install(c("apeglm"))
-BiocManager::available()
-BiocManager::valid()
-
 #Part 4: RNA-Seq Differential Expression with DESeq2
 
 
